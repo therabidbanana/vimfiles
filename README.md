@@ -181,6 +181,8 @@ If you are working in a project that includes jQuery, you would only have symbol
 
 To learn more about [snipmate][snipmate] and creating snippets, type `:h snipmate`
 
+For a quick way to do this, you may want to [create a shell script](https://gist.github.com/781626) to help automate the process. You'll need to restart Vim for the snippets to take affect.
+
 
 ## Syntax Checkers
 
