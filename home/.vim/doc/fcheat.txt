@@ -27,7 +27,6 @@ Normal Mode:
   <tab>         => move between block
   ,,            => insert a single character
   ;;            => prepend a single character
-  <space>       => toggle folding
   zR            => toggle all folds
   \             => clear search highlight
   <c-Up>        => bubble selected line up

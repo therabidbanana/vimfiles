@@ -112,10 +112,6 @@ vmap <tab> %
 nmap ,, i_<esc>r
 nmap ;; a_<esc>r
 
-" Folding
-nnoremap <Space> za
-vnoremap <Space> za
-
 " Clear the search highlight
 map <silent> \ :silent nohlsearch<cr>
 
@@ -206,7 +202,7 @@ endfunction
 
 " Commands for vim-rails
 function! s:setRails()
-  map <buffer> <leader>c :Rcontroller
+  map <buffer> <leader>rc :Rcontroller
   map <buffer> <leader>vc :RVcontroller
   map <buffer> <leader>sc :RScontroller
   map <buffer> <leader>vf :RVfunctional
@@ -283,7 +279,7 @@ if has('gui_running')
     inoremap <F1> <ESC>:set invfullscreen<CR>
     nnoremap <F1> :set invfullscreen<CR>
     vnoremap <F1> :set invfullscreen<CR>
-    map <D-/> <plug>NERDCommenterToggle
+    " map <D-/> <plug>NERDCommenterToggle
     vmap <D-]> >gv
     vmap <D-[> <gv
   end
