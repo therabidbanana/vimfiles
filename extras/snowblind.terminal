@@ -266,6 +266,31 @@
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
 	ZmZmAQABAYY=
 	</data>
+	<key>mouseLeftClick</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2Jq
+	ZWN0AIWEASqEhAFplwGG
+	</data>
+	<key>mouseMiddleClick</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2Jq
+	ZWN0AIWEASqEhAFplwGG
+	</data>
+	<key>mouseRightClick</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2Jq
+	ZWN0AIWEASqEhAFplwGG
+	</data>
+	<key>mouseWheel</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2Jq
+	ZWN0AIWEASqEhAFplwGG
+	</data>
+	<key>mouseWheelEmulation</key>
+	<data>
+	BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2Jq
+	ZWN0AIWEASqEhAFplwGG
+	</data>
 	<key>name</key>
 	<string>snowblind</string>
 	<key>redColour</key>
