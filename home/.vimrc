@@ -9,7 +9,6 @@ call pathogen#helptags()
 filetype on
 filetype plugin indent on
 
-
 " Preferences
 " -----------------------------------------------------------------------------
 set modelines=0
@@ -44,6 +43,10 @@ set listchars=tab:▸\ ,eol:¬,trail:·
 set foldlevelstart=0
 set foldmethod=marker
 set formatoptions=tcq
+
+if has("mouse")
+  set mouse=a
+endif
 
 " Backups
 set history=1000
@@ -115,12 +118,15 @@ nmap ;; a_<esc>r
 " Clear the search highlight
 map <silent> \ :silent nohlsearch<cr>
 
-" <F1> toggles fullscreen
+" <F1> toggles fullscreen in gui
 map <F2> :NERDTreeToggle<cr>
 nnoremap <silent> <F3> :TlistToggle<cr>
 nnoremap <silent> <F4> :YRShow<cr>
 ino <silent> <F5> <c-r>=ShowAvailableSnips()<cr>
 " <F9>-<F12> is reserved for .vimrc.local
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 " Bubble single lines (requires unimpaired.vim)
 nmap <C-Up> [e
@@ -129,7 +135,6 @@ nmap <C-Down> ]e
 " Bubble multiple lines (requires unimpaired.vim)
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
 
 " Leader mapping
 " -----------------------------------------------------------------------------
@@ -180,7 +185,7 @@ endfunction
 
 " Enable browser refreshing on web languages
 function! s:setBrowserEnv()
-  if has('gui_macvim')
+  if has('mac')
     map <buffer> <silent><leader>r :RRB<cr>
   endif
 endfunction
@@ -195,9 +200,7 @@ endfunction
 function! s:setMarkdown()
   call s:setWrapping()
   call s:setBrowserEnv()
-  if has('gui_running')
-    au! BufWritePost *.md,*.markdown,*.mkd :MDP
-  endif
+  au! BufWritePost *.md,*.markdown,*.mkd :MDP
 endfunction
 
 " Commands for vim-rails
@@ -259,6 +262,10 @@ endif
 
 " Themes and GUI settings
 " -----------------------------------------------------------------------------
+if $TERM == 'xterm-color' && &t_Co == 8
+  set t_Co=16
+endif
+
 syntax on
 set background=dark
 colorscheme colorblind
@@ -279,7 +286,6 @@ if has('gui_running')
     inoremap <F1> <ESC>:set invfullscreen<CR>
     nnoremap <F1> :set invfullscreen<CR>
     vnoremap <F1> :set invfullscreen<CR>
-    " map <D-/> <plug>NERDCommenterToggle
     vmap <D-]> >gv
     vmap <D-[> <gv
   end
