@@ -29,8 +29,9 @@ Normal Mode:
   ;;            => prepend a single character
   zR            => toggle all folds
   \             => clear search highlight
-  <c-Up>        => bubble selected line up
-  <c-Down>      => bubble selected line down
+  <c-Up>        => bubble selected line up (In Terminal, map to F11 in .vimrc.local)
+  <c-Down>      => bubble selected line down (In Terminal, map to F11 in .vimrc.local)
+  gV            => Visually select the text that was last edited/pasted
 
 Insert Mode:
   jj            => <ESC>

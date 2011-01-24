@@ -12,7 +12,7 @@ F/ peops, double check, but you most likely already have the basic requirements 
 - [Homesick][homesick] - `gem install homesick`
 - [node.js][node] - `brew install node`
 
-[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files.
+[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files.
 
 
 ## Installation
@@ -212,9 +212,9 @@ Themes included with this configuration:
 
 In the `extras` directory are Terminal themes to match the Vim color themes.
 
-To use the Terminal themes, install [SIMBL 0.9.7](http://www.culater.net/software/SIMBL/SIMBL.php) and save the [64 Bit Terminal Colors](http://github.com/timmfin/terminalcolours) plugin to:
+To use the Terminal themes, install [SIMBL 0.9.7](http://www.culater.net/software/SIMBL/SIMBL.php) and save the [64 Bit Terminal Colors](http://github.com/timmfin/terminalcolours) plug-in to:
 
-    ~/Library/Application Support/SIMBL/Plugins/ 
+    ~/Library/Application Support/SIMBL/Plugins/
 
 
 The color themes have been designed with similarities in the syntax settings. Jumping between multiple languages should be easy on the mind and the eyes. Be adventurous and mix it up once in a while.
@@ -247,6 +247,22 @@ The control key is in an awkward position and the caps lock key is basically use
 - Right click the logo in your dock and select `Options > Show in Finder`
 - Create an alias of `MacVim.app` and drop it in the `/Applications/` directory (this will allow it to be found by Spotlight)
 - Optionally choose to keep the icon in your dock `Options > Keep in Dock`
+
+
+### Alias MacVim's install of Vim For Terminal
+
+Fire up your `.bashrc`, `.zshrc` or wherever your aliases are and add the following:
+
+    alias vim='/usr/local/Cellar/macvim/v7.3-53/MacVim.app/Contents/MacOS/Vim'
+
+Your path may be different depending on the latest version from [homebrew][homebrew].
+
+Once you point the alias to [MacVim's][macvim] Vim executable, you should be able to run plug-ins and crap that depend on ruby, python and so on. While you won't get all the niceties of the gui app, you'll at least have a similar install for your Terminal as what's in [MacVim][macvim].
+
+
+### Mouse Support For Terminal
+
+To get full mouse support (scrolling, clicking, etc...) within Terminal Vim, install the SIMBL [MouseTerm](http://bitheap.org/mouseterm/) plug-in. It brings the goodness.
 
 
 ### Working With Your Own Submodules
