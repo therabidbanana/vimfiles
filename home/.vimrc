@@ -24,7 +24,7 @@ set wildmenu
 set wildmode=list:longest
 set noerrorbells
 set novisualbell
-set cursorline
+" set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
@@ -45,7 +45,7 @@ set foldmethod=marker
 set formatoptions=tcq
 
 if has("mouse")
-  set mouse=a
+ set mouse=a
 endif
 
 " Backups
