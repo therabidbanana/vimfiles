@@ -14,7 +14,7 @@ let g:colors_name = "colorblind"
 " --------------------------------------------------------------------------------------------------
 " TERM     CTERM          VALUE    USAGE       |  TERM     CTERM          VALUE    USAGE
 " --------------------------------------------------------------------------------------------------
-" Black    0 Black        #000000  ---         |  Black    8  DarkGrey  #1A1A1A  ---
+" Black    0 Black        #000000  ---         |  Black    8  DarkGrey  #555555  ---
 " Red      1 DarkRed      #FF0000  Error       |  Red      9  Red       #E52253  Include/Exception
 " Green    2 DarkGreen    #3D9C00  DString     |  Green    10 Green     #96FF32  String
 " Yellow   3 Brown        #FF9600  Function    |  Yellow   11 Yellow    #FFCD00  Label
@@ -27,9 +27,9 @@ let g:colors_name = "colorblind"
 hi Normal                           guifg=#FFFFFF   guibg=#000000 gui=NONE      ctermfg=White     ctermbg=NONE      cterm=NONE
 hi Cursor                           guifg=NONE      guibg=#FF00FF gui=NONE      ctermfg=NONE      ctermbg=Magenta   cterm=NONE
 hi Visual                           guifg=NONE      guibg=#1B2B66 gui=NONE      ctermfg=NONE      ctermbg=DarkBlue  cterm=NONE
-hi CursorLine                       guifg=NONE      guibg=#1A1A1A gui=NONE      ctermfg=NONE      ctermbg=DarkGrey  cterm=NONE
-hi CursorColumn                     guifg=NONE      guibg=#1A1A1A gui=NONE      ctermfg=NONE      ctermbg=DarkGrey  cterm=NONE
-hi LineNr                           guifg=#555555   guibg=NONE    gui=NONE      ctermfg=Grey      ctermbg=NONE      cterm=NONE
+hi CursorLine                       guifg=NONE      guibg=#1A1A1A gui=NONE      ctermfg=NONE      ctermbg=NONE      cterm=NONE
+hi CursorColumn                     guifg=NONE      guibg=#1A1A1A gui=NONE      ctermfg=NONE      ctermbg=NONE      cterm=NONE
+hi LineNr                           guifg=#555555   guibg=NONE    gui=NONE      ctermfg=DarkGrey  ctermbg=NONE      cterm=NONE
 hi VertSplit                        guifg=#000000   guibg=#333333 gui=NONE      ctermfg=Black     ctermbg=Grey      cterm=NONE
 hi MatchParen                       guifg=#FF0000   guibg=NONE    gui=NONE      ctermfg=DarkRed   ctermbg=NONE      cterm=NONE
 hi StatusLine                       guifg=#FFFFFF   guibg=#0080FF gui=bold      ctermfg=White     ctermbg=DarkBlue  cterm=NONE
