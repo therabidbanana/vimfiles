@@ -11,8 +11,9 @@ F/ peops, double check, but you most likely already have the basic requirements 
 - [MacVim][macvim] - `brew install macvim`
 - [Homesick][homesick] - `gem install homesick`
 - [node.js][node] - `brew install node`
+- [discount][discount] - `brew install discount `
 
-[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files.
+[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files. The [discount][discount] executable is recommended for converting markdown files to html for previewing.
 
 
 ## Installation
@@ -326,6 +327,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 [homebrew]: http://github.com/mxcl/homebrew
 [homesick]: http://github.com/technicalpickles/homesick
 [node]: http://nodejs.org/
+[discount]: http://www.pell.portland.or.us/~orc/Code/discount/
 [vim-scripts]: https://github.com/vim-scripts
 [install.sh]: https://github.com/factorylabs/vimfiles/blob/master/install.sh
 [update.sh]: https://github.com/factorylabs/vimfiles/blob/master/update.sh
