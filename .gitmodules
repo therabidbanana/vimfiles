@@ -118,9 +118,6 @@
 [submodule "home/.vim/bundle_storage/vim-speeddating"]
 	path = home/.vim/bundle_storage/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating.git
-[submodule "home/.vim/bundle_storage/vim-supertab"]
-	path = home/.vim/bundle_storage/vim-supertab
-	url = https://github.com/tsaleh/vim-supertab.git
 [submodule "home/.vim/bundle_storage/vim-surround"]
 	path = home/.vim/bundle_storage/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -136,3 +133,6 @@
 [submodule "home/.vim/bundle_storage/delimitMate"]
 	path = home/.vim/bundle_storage/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "home/.vim/bundle_storage/supertab"]
+	path = home/.vim/bundle_storage/supertab
+	url = https://github.com/ervandew/supertab.git

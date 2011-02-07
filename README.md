@@ -12,8 +12,9 @@ F/ peops, double check, but you most likely already have the basic requirements 
 - [Homesick][homesick] - `gem install homesick`
 - [node.js][node] - `brew install node`
 - [discount][discount] - `brew install discount `
+- [ctags][ctags] - `brew install ctags `
 
-[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files. The [discount][discount] executable is recommended for converting markdown files to html for previewing.
+[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files. The [discount][discount] executable is recommended for converting markdown files to html for previewing. The [ctags][ctags] executable is helpful for taglist (jumping between files) and omni completion.
 
 
 ## Installation
@@ -131,6 +132,7 @@ The [install script][install.sh] created initial symbolic links for the plug-ins
 - [rvm.vim](https://github.com/csexton/rvm.vim)
 - [snipmate.vim](https://github.com/msanders/snipmate.vim/blob/master/doc/snipMate.txt)
 - [statusline](https://github.com/factorylabs/vimfiles/blob/master/home/.vim/bundle_storage/statusline/doc/statusline.txt)
+- [supertab](https://github.com/ervandew/supertab/blob/master/doc/supertab.txt)
 - [syntastic](https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt)
 - [taglist.vim](https://github.com/vim-scripts/taglist.vim/blob/master/doc/taglist.txt)
 - [vim-cucumber](https://github.com/tpope/vim-cucumber)
@@ -140,7 +142,6 @@ The [install script][install.sh] created initial symbolic links for the plug-ins
 - [vim-markdown](https://github.com/tpope/vim-markdown)
 - [vim-rails](https://github.com/tpope/vim-rails/blob/master/doc/rails.txt)
 - [vim-ruby](https://github.com/vim-ruby/vim-ruby/tree/master/doc)
-- [vim-supertab](https://github.com/tsaleh/vim-supertab/blob/master/doc/supertab.txt)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
 - [yankring](https://github.com/chrismetcalf/vim-yankring/blob/master/doc/yankring.txt)
 
@@ -174,7 +175,7 @@ These are the additional plug-ins included, but are not required. They are not l
 
 ## Snippets
 
-By default all of the snippet files stored within `snippets_storage` are symlinked into the `snippets` directory. These cover most of the languages used at F/. To see the available snippets for a given file type hit `<F5>`, a snippet is triggered using `<control>` `<space>`.
+By default all of the snippet files stored within `snippets_storage` are symlinked into the `snippets` directory. These cover most of the languages used at F/. To see the available snippets for a given file type hit `<F5>`, a snippet is triggered using `<tab>`.
 
 Certain file types like JavaScript have hundreds of snippets based on the native language and various libraries. This can become unmanageable pretty quickly. The solution is to breakout specific libraries into their own files. For example `javascript-jasmine.snippets` where it needs to be named as `language-library.snippets`. Since snippets are saved in the `snippets_storage` directory, you can be selective about what gets a symbolic link within the `snippets` directory.
 
@@ -327,6 +328,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 [homebrew]: http://github.com/mxcl/homebrew
 [homesick]: http://github.com/technicalpickles/homesick
 [node]: http://nodejs.org/
+[ctags]: http://ctags.sourceforge.net/
 [discount]: http://www.pell.portland.or.us/~orc/Code/discount/
 [vim-scripts]: https://github.com/vim-scripts
 [install.sh]: https://github.com/factorylabs/vimfiles/blob/master/install.sh

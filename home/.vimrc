@@ -24,7 +24,6 @@ set wildmenu
 set wildmode=list:longest
 set noerrorbells
 set novisualbell
-" set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
@@ -43,6 +42,7 @@ set listchars=tab:▸\ ,eol:¬,trail:·
 set foldlevelstart=0
 set foldmethod=marker
 set formatoptions=tcq
+set autowrite
 
 if has("mouse")
  set mouse=a
@@ -77,21 +77,15 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 
 " Popup menu behavior
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+set completeopt=longest,menu
 
-" Override snipmate and set it's triggers to use control space
+" Setup supertab to be a bit smarter about it's usage
+" let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabLongestEnhanced = 1
+
+" Tell snipmate to pull it's snippets from a custom directory
 let g:snippets_dir = $HOME.'/.vim/snippets/'
-ino <silent> <c-space> <c-r>=TriggerSnippet()<cr>
-snor <silent> <c-space> <esc>i<right><c-r>=TriggerSnippet()<cr>
-ino <silent> <s-c-space> <c-r>=BackwardsSnippet()<cr>
-snor <silent> <s-c-space> <esc>i<right><c-r>=BackwardsSnippet()<cr>
 
-" Re-enable the default mappings for super tab
-let g:SuperTabLongestHighlight=1
-let g:SuperTabMappingForward = '<tab>'
-let g:SuperTabMappingBackward = '<s-tab>'
-let g:SuperTabMappingTabLiteral = '<c-tab>'
 
 " Key mapping
 " -----------------------------------------------------------------------------
@@ -175,6 +169,13 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <cr>
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 
+" Commands and helper functions
+" -----------------------------------------------------------------------------
+
+" Sort CSS properties between the braces alphabetically
+:command! SortCSS :g#\({\n\)\@<=#.,/}/sort | :noh
+
+
 " File type utility settings
 " -----------------------------------------------------------------------------
 
@@ -192,7 +193,6 @@ endfunction
 
 " Sort CSS selectors and allow for browser refresh
 function! s:setCSS()
-  map <buffer> <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:let @/=''<cr>
   call s:setBrowserEnv()
 endfunction
 
@@ -258,7 +258,13 @@ if !exists("autocommands_loaded")
   " Enable autosave
   au FocusLost * :wa
 
+  " Enable omnicomplete for supported filetypes
+  autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
+  autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
+
 endif
+
+
 
 " Themes and GUI settings
 " -----------------------------------------------------------------------------
@@ -283,6 +289,7 @@ if has('gui_running')
   if has('gui_macvim')
     macmenu &File.New\ Tab key=<nop>
     set fuoptions=maxhorz,maxvert
+    set cursorline
     inoremap <F1> <ESC>:set invfullscreen<CR>
     nnoremap <F1> :set invfullscreen<CR>
     vnoremap <F1> :set invfullscreen<CR>

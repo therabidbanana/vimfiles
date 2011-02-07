@@ -15,6 +15,7 @@ default_bundles=(
   rvm.vim
   snipmate.vim
   statusline
+  supertab
   syntastic
   taglist.vim
   vim-cucumber
@@ -24,7 +25,6 @@ default_bundles=(
   vim-markdown
   vim-rails
   vim-ruby
-  vim-supertab
   vim-unimpaired
   yankring
 )
