@@ -75,6 +75,7 @@ let NERDSpaceDelims=1
 let NERDTreeIgnore=['.DS_Store']
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_disabled_filetypes = ['scss']
 
 " Popup menu behavior
 set completeopt=longest,menu
@@ -167,6 +168,9 @@ map <leader>e :e <C-R>=expand("%:p:h") . "/" <cr>
 
 " Inserts the path of the currently edited file into a command - Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+" Closes the window showing the location list from sytastic errors
+map <silent><leader>lc :lcl<cr>
 
 
 " Commands and helper functions
