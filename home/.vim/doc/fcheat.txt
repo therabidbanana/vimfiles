@@ -1,4 +1,4 @@
-*fcheat.txt* Settings and various information for the F/ configuration
+fcheat.txt* Settings and various information for the F/ configuration
 
 Author: Factory Design Labs
 
@@ -73,6 +73,8 @@ Global:
   <leader>t     => Command-T trigger
   <leader>ft    => flush Command-T
   <leader>gs    => git status
+  <leader>e     => start an edit command with the path of the current file
+  <leader>lc    => close syntastic's location list
 
 Markdown, CSS, SASS, SCSS, HTML, HAML, JS:
   <leader>r     => refresh running browser
