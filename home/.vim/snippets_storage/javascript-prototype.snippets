@@ -1,13 +1,13 @@
 # Prototype Library  ----------------------------------------------------------
 snippet class
 	var ${1:MyClass} = Class.create(${2:Super}, {
-		initialize: function (${3:args}) {
+		initialize: function(${3:args}) {
 			${4}
 		}
 	});
 snippet addMethods
 	${1:Class}.addMethods({
-		${2:method}: function (${3:args}) {
+		${2:method}: function(${3:args}) {
 			${4}
 		}
 	});
@@ -29,7 +29,7 @@ snippet ajax Ajax.PeriodicalUpdater
 	);${6}
 snippet ajax Ajax.Request
 	new Ajax.Request('${1:url}', {
-		onSuccess: function (response) {
+		onSuccess: function(response) {
 			${2:// Handle the response content...}
 		}
 	});
@@ -39,52 +39,52 @@ snippet ajax Ajax.Updater
 	);
 # Prototype Enumerables
 snippet all
-	all(function (${1:value}) {
+	all(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet any
-	any(function (${1:value}) {
+	any(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet collect
-	collect(function (${1:value}) {
+	collect(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet detect
-	detect(function (${1:value}) {
+	detect(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet each
-	each(function (${1:value}) {
+	each(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet eachSlice
-	eachSlice(${1:number}, function (${2:value}) {
+	eachSlice(${1:number}, function(${2:value}) {
 		${4}
 	}, ${3:context});
 snippet findAll
-	findAll(function (${1:value}) {
+	findAll(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet inject
-	inject(${1:initial_value}, function (${2:accumulator}, ${3:value}) {
+	inject(${1:initial_value}, function(${2:accumulator}, ${3:value}) {
 		${5}
 		return $2;
 	}, ${4:context});
 snippet invoke
 	invoke('${1:methodName}', ${2:optional_args});${3}
 snippet partion
-	partion(function (${1:value}) {
+	partion(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet pluck
 	pluck('${1:property}');${2}
 snippet reject
-	reject(function (${1:value}) {
+	reject(function(${1:value}) {
 		${3}
 	}, ${2:context});
 snippet sortBy
-	sortBy(function (${1:value}) {
+	sortBy(function(${1:value}) {
 		${3}
 	}, ${2:context});
 # Prototype Event
@@ -93,7 +93,7 @@ snippet observe
 snippet stopObserving
 	stopObserving('${1:eventName}', ${2:handler});${3}
 snippet loaded
-	document.observe('dom:loaded', function () {
+	document.observe('dom:loaded', function() {
 		${1:// add initialize calls}
 	});
 # Prototype Functions

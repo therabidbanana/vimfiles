@@ -1,6 +1,6 @@
 "============================================================================
 "File:        javascript.vim
-"Description: Syntax checking plugin for syntastic.vim using nodelint
+"Description: Syntax checking plugin for syntastic.vim using google closure
 "Maintainer:  Matthew Kitt <mk dot kitt at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
@@ -10,38 +10,21 @@
 "
 "============================================================================
 if exists('loaded_javascript_syntax_checker')
-    finish
+  finish
 endif
 let loaded_javascript_syntax_checker = 1
 
-if !executable('node')
-    finish
+if !executable('python')
+  finish
 endif
 
-if !exists('g:Nodelint')
-  let g:Nodelint = $HOME.'/.vim/syntax_checkers/compilers/nodelint/nodelint'
-endif
-
-" default config to nodelint-cofig/config.js right away...
-let s:config = $HOME.'/.vim/syntax_checkers/compilers/nodelint-config/config.js'
-
-" ...but if there is a global from .vimrc, use that...
-if exists('g:NodelintConfig')
-  let s:config = g:NodelintConfig
-endif
-
-" ...unless there is one in the cwd at startup, let that override nodelint's config.
-if filereadable(getcwd() . '/nodelint-config.js')
-  let s:config = getcwd() . '/nodelint-config.js'
-endif
-
-if !exists('g:NodelintReporter')
-  let g:NodelintReporter = $HOME.'/.vim/syntax_checkers/compilers/nodelint/examples/vim/syntastic-reporter.js'
+if !exists('g:ClosureLinter')
+  let g:ClosureLinter = $HOME.'/.vim/syntax_checkers/compilers/gjslint'
 endif
 
 function! SyntaxCheckers_javascript_GetLocList()
-  let makeprg = 'node ' . g:Nodelint . ' ' . shellescape(expand("%")) . ' --config ' . s:config . ' --reporter ' . g:NodelintReporter
-  let errorformat = '%fline\ %l column\ %c Error: %m'
+  let makeprg = g:ClosureLinter . ' --unix_mode --strict --nojsdoc --nosummary ' . shellescape(expand("%"))
+  let errorformat = '%f:%l:%m,%-G%.%#'
   return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction
 

@@ -1,7 +1,7 @@
 # Native JS
 # -----------------------------------------------------------------------------
 snippet proto
-	${1:class_name}.prototype.${2:method_name} = function (${3:first_argument}) {
+	${1:class_name}.prototype.${2:method_name} = function(${3:first_argument}) {
 		${4:// body...}
 	};
 snippet fun
@@ -9,15 +9,15 @@ snippet fun
 		${3:// body...}
 	}
 snippet anon
-	function () {
+	(function() {
 		${1:// body}
-	}
+	}());
 snippet fa
-	function () {
+	function() {
 		${1:// body}
 	}
 snippet vf
-	var ${1:var_name} = function (${2:argument}) {
+	var ${1:var_name} = function(${2:argument}) {
 		${3:// body...}
 	};
 snippet f
@@ -66,17 +66,17 @@ snippet do
 		${2:/* code */}
 	} while (${1:/* condition */});
 snippet :f
-	${1:method_name}: function (${2:attribute}) {
+	${1:method_name}: function(${2:attribute}) {
 		${4}
 	}${3:,}
 snippet :,
 	${1:value_name}: ${2:value}${3:,}
 snippet timeout
-	setTimeout(function () {
+	setTimeout(function() {
 		${2}
 	}, ${1:ms});
 snippet interval
-	setInterval(function () {
+	setInterval(function() {
 		${2}
 	}, ${1:ms});
 snippet getBy

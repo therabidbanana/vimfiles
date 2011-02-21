@@ -6,13 +6,13 @@ snippet req
 snippet mod
 	var ${1:name} = require('${2:module}');${3}
 snippet rf
-	fs.readFile('${1:path}', function (err, data) {
+	fs.readFile('${1:path}', function(err, data) {
 		${2:// body...}
 	});${3}
 snippet rfs
 	fs.readFileSync('${1:path}');${2}
 snippet nt
-	process.nextTick(function () {
+	process.nextTick(function() {
 		${1:// body...}
 	});${3}
 snippet cwd
@@ -34,15 +34,15 @@ snippet compile
 snippet exit
 	process.exit(${1:1});${2}
 snippet al
-	addListener('${1:event}', function (${2}) {
+	addListener('${1:event}', function(${2}) {
 		${3:// body...}
 	});
 snippet on
-	on('${1:event}', function (${2}) {
+	on('${1:event}', function(${2}) {
 		${3:// body...}
 	});
 snippet trap
-	addListener('SIG${1:INT}', function () {
+	addListener('SIG${1:INT}', function() {
 		${2:// body...}
 	});
 snippet se
