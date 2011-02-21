@@ -88,6 +88,20 @@ let g:SuperTabLongestEnhanced = 1
 let g:snippets_dir = $HOME.'/.vim/snippets/'
 
 
+" Commands and helper functions
+" -----------------------------------------------------------------------------
+
+" Sort CSS properties between the braces alphabetically
+:command! SortCSS :g#\({\n\)\@<=#.,/}/sort | :noh
+
+" Let Google Linter autofix the js errors in the current buffer
+function! FixJS()
+  setlocal autoread
+  execute('silent !$HOME/.vim/syntax_checkers/compilers/fixjsstyle --strict --nojsdoc %')
+endfunction
+:command! FJS :call FixJS()
+
+
 " Key mapping
 " -----------------------------------------------------------------------------
 nnoremap j gj
@@ -171,13 +185,6 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
 " Closes the window showing the location list from sytastic errors
 map <silent><leader>lc :lcl<cr>
-
-
-" Commands and helper functions
-" -----------------------------------------------------------------------------
-
-" Sort CSS properties between the braces alphabetically
-:command! SortCSS :g#\({\n\)\@<=#.,/}/sort | :noh
 
 
 " File type utility settings
