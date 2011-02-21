@@ -10,11 +10,10 @@ F/ peops, double check, but you most likely already have the basic requirements 
 - [Homebrew][homebrew] - `ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"`
 - [MacVim][macvim] - `brew install macvim`
 - [Homesick][homesick] - `gem install homesick`
-- [node.js][node] - `brew install node`
 - [discount][discount] - `brew install discount `
 - [ctags][ctags] - `brew install ctags `
 
-[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. [node.js][node] is recommended for allowing the [syntastic][syntastic] plug-in to run [JSLint][jslint] on your JavaScript files. The [discount][discount] executable is recommended for converting markdown files to html for previewing. The [ctags][ctags] executable is helpful for taglist (jumping between files) and omni completion.
+[MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. The [discount][discount] executable is recommended for converting markdown files to html for previewing. The [ctags][ctags] executable is helpful for taglist (jumping between files) and omni completion.
 
 
 ## Installation
@@ -190,13 +189,7 @@ For a quick way to do this, you may want to [create a shell script](https://gist
 
 The configuration uses [syntastic][syntastic] quite heavily, most of it is out of the box. Buffers are checked after each save.
 
-The JavaScript syntax checker runs off of [nodelint][nodelint] ([node][node] + [JSLint][jslint]) instead of jsl which is included with [syntastic][syntastic]. The submodule to [nodelint][nodelint] is under `.vim/syntax_checkers/compilers/`. Also under this directory is [nodelint-config][nodelint-config]. This is the default global settings for all JavaScript files and conforms to the F/ configuration. It's possible, with a global variable, to override this location. In your `.vimrc.local` file.
-
-`let g:NodelintConfig = 'path/to/your/config.js'`
-
-This will override the one in `.vim/syntax_checkers/compilers/nodelint-config`. There is one more level of overriding you can perform, and this is at the project level. At the root level of your project, stick a file in there with the name `nodelint-config.js` and add the settings required by your project. In order for this to work, within Vim, you'll need to set the project root directory as the `cwd` for the Vim session.
-
-If you don't have `node` installed, a simple `brew install node` does the trick.
+The JavaScript syntax checker runs off of a customized version of [Google Closure Linter][closure] instead of jsl which is included with [syntastic][syntastic]. The executables to [Closure Linter][closure] and it's auto fixer are under `.vim/syntax_checkers/compilers/`. This is the default global settings for all JavaScript files and conforms to the F/ configuration. There is a function accessed as a command `FJS` to call the `fixjsstyle` which will attempt to fix the styling issues within the existing buffer. Use it. Read the information about what [Google Closure Linter][closure] can do.
 
 There is also an Objective C checker included. This uses the `gcc` and requires the `cwd` to have the `.xcodeproj` file in it.
 
@@ -334,8 +327,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 [install.sh]: https://github.com/factorylabs/vimfiles/blob/master/install.sh
 [update.sh]: https://github.com/factorylabs/vimfiles/blob/master/update.sh
 [clean.sh]: https://github.com/factorylabs/vimfiles/blob/master/clean.sh
-[nodelint]: http://github.com/tav/nodelint
-[nodelint-config]: https://github.com/factorylabs/nodelint-config
+[closure]: http://code.google.com/p/closure-linter/
 [jslint]: http://www.jslint.com/lint.html
 [syntastic]: https://github.com/scrooloose/syntastic
 [snipmate]: https://github.com/msanders/snipmate.vim
