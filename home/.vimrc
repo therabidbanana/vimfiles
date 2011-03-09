@@ -79,6 +79,7 @@ let g:syntastic_disabled_filetypes = ['scss']
 
 " Popup menu behavior
 set completeopt=longest,menu
+set pumheight=20
 
 " Setup supertab to be a bit smarter about it's usage
 " let g:SuperTabDefaultCompletionType = 'context'
