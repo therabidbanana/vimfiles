@@ -253,10 +253,6 @@ if !exists("autocommands_loaded")
   au BufRead,BufNewFile *.as set filetype=actionscript
   au BufRead,BufNewFile *.json set filetype=json
 
-  " Make and Python use real tabs
-  au FileType make set noexpandtab
-  au FileType python set noexpandtab
-
   " Call the file type utility methods
   au BufRead,BufNewFile *.txt call s:setWrapping()
   au BufRead,BufNewFile *.md,*.markdown,*.mkd call s:setMarkdown()
