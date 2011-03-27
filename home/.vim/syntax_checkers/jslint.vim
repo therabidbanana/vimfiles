@@ -10,39 +10,39 @@
 "
 " This is for use with jslint and node, F/ is deprecating in favor of closure
 "============================================================================
-if exists('loaded_javascript_syntax_checker')
-    finish
-endif
-let loaded_javascript_syntax_checker = 1
+" if exists('loaded_javascript_syntax_checker')
+    " finish
+" endif
+" let loaded_javascript_syntax_checker = 1
 
-if !executable('node')
-    finish
-endif
+" if !executable('node')
+    " finish
+" endif
 
-if !exists('g:Nodelint')
-  let g:Nodelint = $HOME.'/.vim/syntax_checkers/compilers/nodelint/nodelint'
-endif
+" if !exists('g:Nodelint')
+  " let g:Nodelint = $HOME.'/.vim/syntax_checkers/compilers/nodelint/nodelint'
+" endif
 
-" default config to nodelint-cofig/config.js right away...
-let s:config = $HOME.'/.vim/syntax_checkers/compilers/nodelint-config/config.js'
+" " default config to nodelint-cofig/config.js right away...
+" let s:config = $HOME.'/.vim/syntax_checkers/compilers/nodelint-config/config.js'
 
-" ...but if there is a global from .vimrc, use that...
-if exists('g:NodelintConfig')
-  let s:config = g:NodelintConfig
-endif
+" " ...but if there is a global from .vimrc, use that...
+" if exists('g:NodelintConfig')
+  " let s:config = g:NodelintConfig
+" endif
 
-" ...unless there is one in the cwd at startup, let that override nodelint's config.
-if filereadable(getcwd() . '/nodelint-config.js')
-  let s:config = getcwd() . '/nodelint-config.js'
-endif
+" " ...unless there is one in the cwd at startup, let that override nodelint's config.
+" if filereadable(getcwd() . '/nodelint-config.js')
+  " let s:config = getcwd() . '/nodelint-config.js'
+" endif
 
-if !exists('g:NodelintReporter')
-  let g:NodelintReporter = $HOME.'/.vim/syntax_checkers/compilers/nodelint/examples/vim/syntastic-reporter.js'
-endif
+" if !exists('g:NodelintReporter')
+  " let g:NodelintReporter = $HOME.'/.vim/syntax_checkers/compilers/nodelint/examples/vim/syntastic-reporter.js'
+" endif
 
-function! SyntaxCheckers_javascript_GetLocList()
-  let makeprg = 'node ' . g:Nodelint . ' ' . shellescape(expand("%")) . ' --config ' . s:config . ' --reporter ' . g:NodelintReporter
-  let errorformat = '%fline\ %l column\ %c Error: %m'
-  return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
-endfunction
+" function! SyntaxCheckers_javascript_GetLocList()
+  " let makeprg = 'node ' . g:Nodelint . ' ' . shellescape(expand("%")) . ' --config ' . s:config . ' --reporter ' . g:NodelintReporter
+  " let errorformat = '%fline\ %l column\ %c Error: %m'
+  " return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+" endfunction
 

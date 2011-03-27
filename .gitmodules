@@ -1,9 +1,3 @@
-[submodule "home/.vim/syntax_checkers/compilers/nodelint"]
-	path = home/.vim/syntax_checkers/compilers/nodelint
-	url = https://github.com/tav/nodelint.git
-[submodule "home/.vim/syntax_checkers/compilers/nodelint-config"]
-	path = home/.vim/syntax_checkers/compilers/nodelint-config
-	url = https://github.com/factorylabs/nodelint-config.git
 [submodule "home/.vim/bundle_storage/ack.vim"]
 	path = home/.vim/bundle_storage/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
