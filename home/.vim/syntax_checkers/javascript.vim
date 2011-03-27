@@ -1,6 +1,6 @@
 "============================================================================
 "File:        javascript.vim
-"Description: Syntax checking plugin for syntastic.vim using google closure
+"Description: Syntax checking plugin for syntastic.vim using jshint
 "Maintainer:  Matthew Kitt <mk dot kitt at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
@@ -8,23 +8,30 @@
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
+" This is for use with jslint and node, F/ is deprecating in favor of closure
 "============================================================================
 if exists('loaded_javascript_syntax_checker')
   finish
 endif
 let loaded_javascript_syntax_checker = 1
 
-if !executable('python')
+if !executable('jshint')
   finish
 endif
 
-if !exists('g:ClosureLinter')
-  let g:ClosureLinter = $HOME.'/.vim/syntax_checkers/compilers/gjslint'
+" Check for a .jshintrc in the cwd at startup, let that override any other configurations.
+if filereadable(getcwd() . '/.jshintrc')
+  let s:config = getcwd() . '/.jshintrc'
 endif
 
 function! SyntaxCheckers_javascript_GetLocList()
-  let makeprg = g:ClosureLinter . ' --unix_mode --strict --nojsdoc --nosummary ' . shellescape(expand("%"))
-  let errorformat = '%f:%l:%m,%-G%.%#'
+
+  if exists('s:config')
+    let makeprg = 'jshint ' . shellescape(expand("%")) . ' --config ' . s:config
+  else
+    let makeprg = 'jshint ' . shellescape(expand("%"))
+  endif
+  let errorformat = '%f: line %l\, col %c\, %m,%-G%.%#'
   return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction
 

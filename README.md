@@ -189,7 +189,7 @@ For a quick way to do this, you may want to [create a shell script](https://gist
 
 The configuration uses [syntastic][syntastic] quite heavily, most of it is out of the box. Buffers are checked after each save.
 
-The JavaScript syntax checker runs off of a customized version of [Google Closure Linter][closure] instead of jsl which is included with [syntastic][syntastic]. The executables to [Closure Linter][closure] and it's auto fixer are under `.vim/syntax_checkers/compilers/`. This is the default global settings for all JavaScript files and conforms to the F/ configuration. There is a function accessed as a command `FJS` to call the `fixjsstyle` which will attempt to fix the styling issues within the existing buffer. Use it. Read the information about what [Google Closure Linter][closure] can do.
+The JavaScript syntax checker runs [JSHint][jshint] instead of jsl which is included with [syntastic][syntastic]. The executable to [JSHint][jshint] runs on [node.js][node] and needs to be installed via [npm][npm]. Also install the custom configuration JSON file into your `$HOME` directory. Instructions for doing this are located at the [jshint-config][jshint-config] repository. This installation will make it global to your machine. If you need a specific configuration on a per project basis, just drop a `.jshintrc` file in your project directory and tweak the settings.
 
 There is also an Objective C checker included. This uses the `gcc` and requires the `cwd` to have the `.xcodeproj` file in it.
 
@@ -336,3 +336,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 [MesloGM]: https://github.com/andreberg/Meslo-Font
 [defunkt]: http://github.com/defunkt
 [defunkt-subs]: http://github.com/guides/developing-with-submodules
+[node]: http://nodejs.org/
+[npm]: http://npmjs.org/
+[jshint]: http://jshint.com/ 
+[jshint-config]: https://github.com/factorylabs/jshint-config 
+
