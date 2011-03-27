@@ -46,6 +46,7 @@ hi NonText                          guifg=#777777   guibg=NONE    gui=NONE      
 hi SpecialKey                       guifg=#333333   guibg=NONE    gui=NONE      ctermfg=DarkGrey ctermbg=NONE   cterm=NONE
 hi Title                            guifg=#000000   guibg=NONE    gui=NONE      ctermfg=Black    ctermbg=NONE   cterm=NONE
 hi SpellBad                         guifg=NONE      guibg=NONE    gui=undercurl ctermfg=NONE     ctermbg=NONE   cterm=underline guisp=Magenta
+hi SpellCap                         guifg=NONE      guibg=NONE    gui=undercurl ctermfg=NONE     ctermbg=NONE   cterm=underline guisp=Magenta
 
 hi Boolean                          guifg=#108888   guibg=NONE  gui=NONE        ctermfg=DarkCyan ctermbg=NONE   cterm=NONE
 hi Character                        guifg=#C24A00   guibg=NONE  gui=NONE        ctermfg=Brown    ctermbg=NONE   cterm=NONE
