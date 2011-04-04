@@ -141,6 +141,7 @@ The [install script][install.sh] created initial symbolic links for the plug-ins
 - [vim-markdown](https://github.com/tpope/vim-markdown)
 - [vim-rails](https://github.com/tpope/vim-rails/blob/master/doc/rails.txt)
 - [vim-ruby](https://github.com/vim-ruby/vim-ruby/tree/master/doc)
+- [vim-stylus](https://github.com/wavded/vim-stylus)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
 - [yankring](https://github.com/chrismetcalf/vim-yankring/blob/master/doc/yankring.txt)
 
@@ -154,6 +155,7 @@ These are the additional plug-ins included, but are not required. They are not l
 - [autocorrect.vim](https://github.com/vim-scripts/autocorrect.vim) - Corrects misspellings as you type i.e. teh -> the \*\*
 - [bufkill.vim](https://github.com/vim-scripts/bufkill.vim) - Unload, delete or wipe a buffer
 - [camelcasemotion](https://github.com/vim-scripts/camelcasemotion/blob/master/doc/camelcasemotion.txt) - Motion commands for moving between camelCase or words\_with\_underscores \*\*
+- [clang-complete](https://github.com/Rip-Rip/clang_complet://github.com/Rip-Rip/clang_complete) - Use clang for completing C/C++ code.
 - [colorsel.vim](https://github.com/vim-scripts/colorsel.vim/blob/master/doc/colorsel.txt) - Interactive RGB/HSV color selector
 - [Command-T](http://www.url.com/) - Just like TextMate
 - [delimitMate](https://github.com/Raimondi/delimitMate) - Automatic closing of quotes, parenthesis, brackets, etc. \*\*

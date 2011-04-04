@@ -133,3 +133,6 @@
 [submodule "home/.vim/bundle_storage/clang_complete"]
 	path = home/.vim/bundle_storage/clang_complete
 	url = https://github.com/Rip-Rip/clang_complete.git
+[submodule "home/.vim/bundle_storage/vim-stylus"]
+	path = home/.vim/bundle_storage/vim-stylus
+	url = https://github.com/wavded/vim-stylus.git

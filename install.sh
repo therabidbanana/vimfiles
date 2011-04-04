@@ -25,6 +25,7 @@ default_bundles=(
   vim-markdown
   vim-rails
   vim-ruby
+  vim-stylus
   vim-unimpaired
   yankring
 )
