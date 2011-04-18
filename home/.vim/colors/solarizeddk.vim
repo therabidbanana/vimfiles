@@ -50,7 +50,7 @@ hi SpellCap                         guifg=NONE      guibg=NONE    gui=undercurl 
 
 hi Boolean                          guifg=#2AA198   guibg=NONE  gui=NONE        ctermfg=DarkCyan    ctermbg=NONE      cterm=NONE
 hi Character                        guifg=#B58900   guibg=NONE  gui=NONE        ctermfg=Brown       ctermbg=NONE      cterm=NONE
-hi Comment                          guifg=#073642   guibg=NONE  gui=NONE        ctermfg=Black       ctermbg=NONE      cterm=NONE
+hi Comment                          guifg=#6C71C4   guibg=NONE  gui=NONE        ctermfg=Magenta       ctermbg=NONE      cterm=NONE
 hi Conditional                      guifg=#268BD2   guibg=NONE  gui=NONE        ctermfg=DarkBlue    ctermbg=NONE      cterm=NONE
 hi Constant                         guifg=#D30102   guibg=NONE  gui=NONE        ctermfg=DarkRed     ctermbg=NONE      cterm=NONE
 hi Define                           guifg=#268BD2   guibg=NONE  gui=NONE        ctermfg=DarkBlue    ctermbg=NONE      cterm=NONE
