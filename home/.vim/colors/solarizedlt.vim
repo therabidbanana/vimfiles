@@ -24,29 +24,34 @@ let g:colors_name = "solarizedlt"
 " White    7 Grey         #EEE8D5  Number      |  White    15 White     #FDF6E3  ---
 " --------------------------------------------------------------------------------------------------
 
-hi Normal                           guifg=#FDF6E3   guibg=#657B83 gui=NONE      ctermfg=Yellow      ctermbg=NONE      cterm=NONE
+hi Normal                           guifg=#586E75   guibg=#657B83 gui=NONE      ctermfg=Green      ctermbg=NONE      cterm=NONE
 hi Cursor                           guifg=NONE      guibg=#D33682 ctermfg=NONE  ctermbg=DarkMagenta cterm=NONE
 hi Visual                           guifg=NONE      guibg=#EEE8D5 gui=NONE      ctermfg=NONE        ctermbg=Grey      cterm=NONE
-hi CursorLine                       guifg=NONE      guibg=#EEE8D5 gui=NONE      ctermfg=NONE        ctermbg=NONE      cterm=NONE
+hi CursorLine                       guifg=NONE      guibg=#EEE8D5 gui=NONE      ctermfg=NONE        ctermbg=Grey      cterm=NONE
 hi CursorColumn                     guifg=NONE      guibg=#EEE8D5 gui=NONE      ctermfg=NONE        ctermbg=NONE      cterm=NONE
 hi LineNr                           guifg=#839496   guibg=NONE    gui=NONE      ctermfg=Blue        ctermbg=NONE      cterm=NONE
-hi VertSplit                        guifg=#073642   guibg=#839496 gui=NONE      ctermfg=Black       ctermbg=Blue      cterm=NONE
+hi MoreMsg                          guifg=#268BD2   guibg=NONE    gui=NONE      ctermfg=DarkBlue    ctermbg=NONE      cterm=NONE
+hi ModeMsg                          guifg=#268BD2   guibg=NONE    gui=NONE      ctermfg=DarkBlue    ctermbg=NONE      cterm=NONE
+hi VertSplit                        guifg=#073642   guibg=#93A1A1 gui=NONE      ctermfg=Black       ctermbg=Cyan      cterm=NONE
 hi MatchParen                       guifg=#D30102   guibg=NONE    gui=NONE      ctermfg=DarkRed     ctermbg=NONE      cterm=NONE
-hi StatusLine                       guifg=#EEE8D5   guibg=#586E75 gui=bold      ctermfg=White       ctermbg=Green     cterm=NONE
-hi StatusLineNC                     guifg=#002B36   guibg=#586E75 gui=NONE      ctermfg=DarkGrey    ctermbg=Green     cterm=NONE
+hi StatusLine                       guifg=#EEE8D5   guibg=#93A1A1 gui=bold      ctermfg=White       ctermbg=Cyan     cterm=NONE
+hi StatusLineNC                     guifg=#002B36   guibg=#93A1A1 gui=NONE      ctermfg=DarkGrey    ctermbg=Cyan     cterm=NONE
 hi Pmenu                            guifg=#073642   guibg=#EEE8D5 gui=NONE      ctermfg=Black       ctermbg=Grey      cterm=NONE
 hi PmenuSel                         guifg=#EEE8D5   guibg=#839496 gui=NONE      ctermfg=White       ctermbg=Blue      cterm=NONE
 hi IncSearch                        guifg=#FDF6E3   guibg=#B58900 gui=NONE      ctermfg=White       ctermbg=Brown     cterm=NONE
 hi Search                           guifg=#FDF6E3   guibg=#B58900 gui=NONE      ctermfg=White       ctermbg=Brown     cterm=NONE
 hi Directory                        guifg=#268BD2   guibg=NONE    gui=NONE      ctermfg=DarkBlue    ctermbg=NONE      cterm=NONE
-hi Folded                           guifg=#586E75   guibg=NONE    gui=NONE      ctermfg=Magenta     ctermbg=NONE      cterm=NONE
+hi Folded                           guifg=#6C71C4   guibg=NONE    gui=NONE      ctermfg=Magenta     ctermbg=NONE      cterm=NONE
 hi ErrorMsg                         guifg=#D30102   guibg=NONE    gui=NONE      ctermfg=DarkRed     ctermbg=NONE      cterm=NONE
-hi WarningMsg                       guifg=#B58900   guibg=NONE    gui=NONE      ctermfg=DarkYellow  ctermbg=NONE      cterm=NONE
+hi WarningMsg                       guifg=#B58900   guibg=NONE    gui=NONE      ctermfg=Brown  ctermbg=NONE      cterm=NONE
 hi NonText                          guifg=#93A1A1   guibg=NONE    gui=NONE      ctermfg=Cyan        ctermbg=NONE      cterm=NONE
-hi SpecialKey                       guifg=#073642   guibg=NONE    gui=NONE      ctermfg=Black       ctermbg=NONE      cterm=NONE
-hi Title                            guifg=#657B83   guibg=NONE    gui=NONE      ctermfg=Yellow      ctermbg=NONE      cterm=NONE
+hi SpecialKey                       guifg=#D30102   guibg=NONE    gui=NONE      ctermfg=DarkRed     ctermbg=NONE      cterm=NONE
+hi Title                            guifg=#CB4B16   guibg=NONE    gui=NONE      ctermfg=Red         ctermbg=NONE      cterm=NONE
 hi SpellBad                         guifg=NONE      guibg=NONE    gui=undercurl ctermfg=NONE        ctermbg=NONE      cterm=underline  guisp=Magenta
 hi SpellCap                         guifg=NONE      guibg=NONE    gui=undercurl ctermfg=NONE        ctermbg=NONE      cterm=underline  guisp=Magenta
+hi Question                         guifg=#2AA198   guibg=NONE    gui=NONE      ctermfg=DarkCyan    ctermbg=NONE      cterm=NONE
+hi WildMenu                         guifg=#EEE8D5   guibg=#073642 gui=NONE      ctermfg=Grey        ctermbg=Black     cterm=NONE
+
 
 hi Boolean                          guifg=#2AA198   guibg=NONE  gui=NONE        ctermfg=DarkCyan    ctermbg=NONE      cterm=NONE
 hi Character                        guifg=#B58900   guibg=NONE  gui=NONE        ctermfg=Brown       ctermbg=NONE      cterm=NONE
