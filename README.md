@@ -134,6 +134,7 @@ The [install script][install.sh] created initial symbolic links for the plug-ins
 - [supertab](https://github.com/ervandew/supertab/blob/master/doc/supertab.txt)
 - [syntastic](https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt)
 - [taglist.vim](https://github.com/vim-scripts/taglist.vim/blob/master/doc/taglist.txt)
+- [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 - [vim-cucumber](https://github.com/tpope/vim-cucumber)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt)
 - [vim-haml](https://github.com/tpope/vim-haml)

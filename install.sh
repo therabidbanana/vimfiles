@@ -18,6 +18,7 @@ default_bundles=(
   supertab
   syntastic
   taglist.vim
+  vim-coffee-script
   vim-cucumber
   vim-fugitive
   vim-haml
