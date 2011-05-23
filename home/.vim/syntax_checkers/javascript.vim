@@ -20,9 +20,9 @@ if !executable('jshint')
 endif
 
 " Check for a .jshintrc in the cwd at startup, let that override any other configurations.
-if filereadable(getcwd() . '/.jshintrc')
-  let s:config = getcwd() . '/.jshintrc'
-endif
+" if filereadable(getcwd() . '/.jshintrc')
+  " let s:config = getcwd() . '/.jshintrc'
+" endif
 
 function! SyntaxCheckers_javascript_GetLocList()
 
