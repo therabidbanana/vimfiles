@@ -28,6 +28,7 @@ default_bundles=(
   vim-ruby
   vim-stylus
   vim-unimpaired
+  vim-surround
   yankring
 )
 
