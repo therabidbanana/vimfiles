@@ -1,0 +1,1 @@
+%x(`pwd`/install.sh)
