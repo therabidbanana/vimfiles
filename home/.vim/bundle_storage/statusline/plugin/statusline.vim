@@ -76,7 +76,7 @@ set statusline+=%{rvm#statusline()}
 
 set statusline+=%#error#                            "display a warning if &et is wrong, or we have mixed-indenting
 set statusline+=%{StatuslineTabWarning()}           "warnings for mixed tabs and other issues
-set statusline+=%{StatuslineTrailingSpaceWarning()} "warning if there is any trailing whitespace
+" set statusline+=%{StatuslineTrailingSpaceWarning()} "warning if there is any trailing whitespace
 set statusline+=%*
 set statusline+=%=                                  "left/right separator
 set statusline+=%c,                                 "cursor column
