@@ -12,7 +12,7 @@ default_bundles=(
   nerdcommenter
   nerdtree
   processing.vim
-  rvm.vim
+  vim-rvm
   snipmate.vim
   statusline
   supertab
@@ -29,7 +29,12 @@ default_bundles=(
   vim-stylus
   vim-unimpaired
   vim-surround
+  vim-repeat
+  lustyjuggler
   yankring
+  Command-T
+  ZoomWin
+  bufkill.vim
 )
 
 full_path=`pwd`

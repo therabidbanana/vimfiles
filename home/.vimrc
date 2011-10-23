@@ -11,7 +11,8 @@ filetype plugin indent on
 
 " Preferences
 " -----------------------------------------------------------------------------
-set modelines=0
+set modeline
+set modelines=10
 set encoding=utf-8
 set scrolloff=3
 set sidescrolloff=3
@@ -20,25 +21,37 @@ set smartindent
 set showmode
 set showcmd
 set hidden
+set ttyfast
+
+" Tab completion
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+
+" No beeping
 set noerrorbells
 set novisualbell
-set ttyfast
+
+" Show line number and other info in windows
 set ruler
-set backspace=indent,eol,start
 set number
 set title
 set laststatus=2
 set splitbelow splitright
+set rnu
+
+
+" Whitespace settings
+set list
+set listchars=tab:▸\ ,eol:¬,trail:·
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set smarttab
 set expandtab
 set nowrap
-set list
-set listchars=tab:▸\ ,eol:¬,trail:·
+set backspace=indent,eol,start
+
 set foldlevelstart=0
 set foldmethod=marker
 set formatoptions=tcq
@@ -51,8 +64,13 @@ endif
 " Backups
 set history=1000
 set undolevels=1000
-set nobackup
-set directory=~/.vim/tmp/swap/
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+
+" Undo files
+set undofile
+set undodir=~/.vim/tmp/undos//
+
 
 " Searching
 set ignorecase
@@ -62,9 +80,7 @@ set showmatch
 set hlsearch
 set gdefault
 set grepprg=ack
-runtime macros/matchit.vim
-
-let mapleader = ','
+runtime! macros/matchit.vim
 
 command! -nargs=* Wrap set wrap linebreak nolist
 
@@ -72,7 +88,10 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " Plugin configurations
 " -----------------------------------------------------------------------------
 let NERDSpaceDelims=1
-let NERDTreeIgnore=['.DS_Store']
+let NERDTreeShowLineNumbers=0
+let NERDTreeMinimalUI=1
+let NERDTreeShowLineNumbers=0
+let NERDTreeIgnore=['.DS_Store', '\.rbc$', '\~$']
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes = ['scss']
@@ -87,6 +106,31 @@ let g:SuperTabLongestEnhanced = 1
 
 " Tell snipmate to pull it's snippets from a custom directory
 let g:snippets_dir = $HOME.'/.vim/snippets/'
+
+" Set up command-t
+let g:CommandTMaxHeight=20
+
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
+
+" gist-vim defaults
+if has("mac")
+  let g:gist_clip_command = 'pbcopy'
+elseif has("unix")
+  let g:gist_clip_command = 'xclip -selection clipboard'
+endif
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+
+
+" MacVIM shift+arrow-keys behavior (required in .vimrc)
+let macvim_hig_shift_movement = 1
+
+" CommandT
+let g:CommandTAcceptSelectionMap='<cr>'
+let g:CommandTAcceptSelectionVSplitMap=['<C-cr>', '<S-v>']
+let g:CommandTAcceptSelectionSplitMap=['<S-s>']
 
 
 " Commands and helper functions
@@ -105,11 +149,10 @@ endfunction
 
 " Key mapping
 " -----------------------------------------------------------------------------
+" for line wrapping navigation - j/k will work on wrapped lines
 nnoremap j gj
 nnoremap k gk
-nnoremap ; :
-inoremap jj <ESC>
-inoremap jk <Esc>
+
 
 " Move between splits
 map <C-h> <C-w>h
@@ -127,13 +170,6 @@ nmap ;; a_<esc>r
 
 " Clear the search highlight
 map <silent> \ :silent nohlsearch<cr>
-
-" <F1> toggles fullscreen in gui
-map <F2> :NERDTreeToggle<cr>
-nnoremap <silent> <F3> :TlistToggle<cr>
-nnoremap <silent> <F4> :YRShow<cr>
-ino <silent> <F5> <c-r>=ShowAvailableSnips()<cr>
-" <F9>-<F12> is reserved for .vimrc.local
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
@@ -170,13 +206,10 @@ map <silent><leader>CT :retab<cr>
 map <leader>s <C-w>v<C-w>l
 
 " Toggle spelling hints
-nmap <silent> <leader>ts :set spell!<cr>
+" nmap <silent> <leader>ts :set spell!<cr>
 
 " Reload ctags
 map <leader>rt :!ctags --extra=+f -R *<cr><cr>
-
-" Git bindings
-map <leader>gs :Gstatus<cr>
 
 " Opens an edit command with the path of the currently edited file filled in
 map <leader>e :e <C-R>=expand("%:p:h") . "/" <cr>
@@ -252,6 +285,8 @@ if !exists("autocommands_loaded")
   au BufRead,BufNewFile *.m*down set filetype=markdown
   au BufRead,BufNewFile *.as set filetype=actionscript
   au BufRead,BufNewFile *.json set filetype=json
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+  au FileType make                                     set noexpandtab
 
   " Call the file type utility methods
   au BufRead,BufNewFile *.txt call s:setWrapping()

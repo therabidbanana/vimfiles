@@ -1,17 +1,17 @@
-# F/ Vim Configuration
+# David's Vim Configuration
 
-The default configuration files for Vim used at F/. Tuned to play nice with [MacVim][macvim] but works with most \*nix environments. Setup using [homesick][homesick] for that symlinkn' goodness.
+My vimfiles for installation with the awesome Homesick project. Based on: https://github.com/factorylabs/vimfiles
 
 
 ## To Get The Full Effect
 
-F/ peops, double check, but you most likely already have the basic requirements installed on your machine.
+You'll need some basic stuff before getting started - homesick, discount and ctags. On a mac, this is easy to handle with Homebrew, and you'll probably want Macvim as well.
 
 - [Homebrew][homebrew] - `ruby -e "$(curl -fsSL https://gist.github.com/raw/323731/install_homebrew.rb)"`
-- [MacVim][macvim] - `brew install macvim`
 - [Homesick][homesick] - `gem install homesick`
 - [discount][discount] - `brew install discount `
 - [ctags][ctags] - `brew install ctags `
+- [MacVim][macvim] - `brew install macvim`
 
 [MacVim][macvim] is not a requirement as the majority of the files work in most \*nix environments including Terminal. It's recommended to use [Homebrew's][homebrew] package of [MacVim][macvim], as it compiles MacVim and Vim at 64 bit with Ruby, Python, Perl, installs the command line link `mvim`, plus a bunch of other goodness. [Homesick][homesick] is required for easy management of dot files with the repository. The [discount][discount] executable is recommended for converting markdown files to html for previewing. The [ctags][ctags] executable is helpful for taglist (jumping between files) and omni completion.
 
@@ -20,14 +20,10 @@ F/ peops, double check, but you most likely already have the basic requirements 
 
 To install the files and default configuration run the following:
 
-    homesick clone git@github.com:factorylabs/vimfiles.git
-    cd ~/.homesick/repos/vimfiles
-    bash install.sh
-    homesick symlink vimfiles -f
+    homesick clone therabidbanana/vimfiles
+    homesick symlink vimfiles
 
-\* If you don't have commit rights use `homesick clone https://github.com/factorylabs/vimfiles.git`
-
-This will install the default configuration files/directories, submodules, and create symbolic links for bundles and snippets. Most of the heavy lifting is done by the [install script][install.sh].
+This will install the default configuration files/directories, submodules, and create symbolic links for bundles and snippets. Most of the heavy lifting is done by the [install script][install.sh], which should automatically run upon homesick clone.
 
 At this point you should have a default setup ready to rock. You're going to want to tune it a bit to your environment, so go forth and "Pimp Your Ride".
 
@@ -38,11 +34,10 @@ The `install.sh` script created a `.vimrc.local` file. This stores local configu
 
 You'll want to tune a few settings right off the bat. Open the `.vimrc.local` file (in Vim type `,evl` a mnemonic is "*edit vimrc local*").
 
-1. Uncomment `g:yankring_history_dir` and optionally change it's path, otherwise `yankring` will save it's history in a file in your `$HOME` directory
-- Optional, point `g:MarkdownPreviewUserStyles` to the directory where your user specific style sheets for the markdown previewer reside. If your an F/ peop, you can clone the repository for [F/ Markdown Themes][fmd-themes] and gain templates and style sheets to keep you out of MS Word.
+- Uncomment `g:yankring_history_dir` and optionally change it's path, otherwise `yankring` will save it's history in a file in your `$HOME` directory
 - Set the default browser by changing `g:RefreshRunningBrowserDefault`. Use "chrome", "safari", or "firefox"
 - Give yourself a signature with `g:snips_author` by including your name for various [snipmate][snipmate] snippets
-- Optionally uncomment one of the `colorschemes`, there are 4 included as described below, the default is `colorblind`
+- Optionally uncomment one of the `colorschemes`, there are 4 included as described below, the default is `solarized`
 - It's recommended to uncomment the entire conditional under *User GUI specific settings*. We roll with the [custom font MesloGM][MesloGM] at 12px. You'll need to download and install it, otherwise roll with Monaco or something if you want to go blind. If you want to set a transparency, you'll need to enable *Use experimental renderer* in MacVim's preferences -> Advanced settings. The primary reason for uncommenting this conditional is, you'll find certain plug-ins need to be disabled or have certain settings applied to work across MacVim and various \*nix environments.
 
 You can apply custom key bindings in `.vimrc.local`, configure plug-ins, or override default settings.
@@ -55,9 +50,9 @@ Submodule plug-ins generate `doc/tag` files associated with help documents every
 There are two shell scripts included to help in this process [clean.sh][clean.sh] and [update.sh][update.sh].
 
 
-### Updating From The F/ Repository
+### Updating From Main Repository
 
-To update from the latest changes in the F/ repository run the following:
+To update from the latest changes from repository run the following:
 
 1. Quit out of Vim
 - `bash clean.sh`
@@ -97,7 +92,7 @@ New plug-ins need to be added to the `bundle_storage` directory and should be tr
     git submodule update
     ln -s ~/path/to/vimfiles/bundle_storage/bundle-name ~/path/to/vimfiles/bundle/bundle-name
 
-Test it out and if it's a keeper, add it to the repository, add it to the list below with a quick description and tell the world about it's greatness.
+Test it out and if it's a keeper, add it to the repository, add it to the list below with a quick description and tell the world about its greatness.
 
 [Vim Scripts][vim-scripts] has an enormous amount of repositories for all sorts of plug-ins. However, if the original author has their own github repository, try to clone from there instead.
 
@@ -145,34 +140,33 @@ The [install script][install.sh] created initial symbolic links for the plug-ins
 - [vim-stylus](https://github.com/wavded/vim-stylus)
 - [vim-unimpaired](https://github.com/tpope/vim-unimpaired/blob/master/doc/unimpaired.txt)
 - [yankring](https://github.com/chrismetcalf/vim-yankring/blob/master/doc/yankring.txt)
+- [Command-T](http://www.url.com/) - Just like TextMate
+- [vim-surround](https://github.com/tpope/vim-surround/blob/master/doc/surround.txt) - Delete, change, and add "surroundings" i.e. parentheses, quotes, and HTML tags
+- [lustyjuggler](https://github.com/vim-scripts/LustyJuggler) - Enables a window for navigating through open buffers
+- [vim-repeat](https://github.com/tpope/vim-repeat) - Enable repeating commands mapped to "." \*\*
+- [bufkill.vim](https://github.com/vim-scripts/bufkill.vim) - Unload, delete or wipe a buffer
 
 
 ### Additional Plug-Ins
 
 These are the additional plug-ins included, but are not required. They are not linked to the `bundle` directory out of the box. If adding any of these, make sure to read the docs on their usage and what variables/settings may be required in `.vimrc.local`
 
-- [argtextobj.vim](https://github.com/vim-scripts/argtextobj.vim) - Motion commands for manipulating function arguments \*\*
+- [argtextobj.vim](https://github.com/vim-scripts/argtextobj.vim) - Motion commands for manipulating function arguments 
 - [autocomplpop.vim](https://github.com/vim-scripts/AutoComplPop/blob/master/doc/acp.txt) - Live completion as you type, this can slow Vim down, but is useful in certain situations
-- [autocorrect.vim](https://github.com/vim-scripts/autocorrect.vim) - Corrects misspellings as you type i.e. teh -> the \*\*
-- [bufkill.vim](https://github.com/vim-scripts/bufkill.vim) - Unload, delete or wipe a buffer
+- [autocorrect.vim](https://github.com/vim-scripts/autocorrect.vim) - Corrects misspellings as you type i.e. teh -> the 
 - [camelcasemotion](https://github.com/vim-scripts/camelcasemotion/blob/master/doc/camelcasemotion.txt) - Motion commands for moving between camelCase or words\_with\_underscores \*\*
 - [clang-complete](https://github.com/Rip-Rip/clang_complet://github.com/Rip-Rip/clang_complete) - Use clang for completing C/C++ code.
 - [colorsel.vim](https://github.com/vim-scripts/colorsel.vim/blob/master/doc/colorsel.txt) - Interactive RGB/HSV color selector
-- [Command-T](http://www.url.com/) - Just like TextMate
-- [delimitMate](https://github.com/Raimondi/delimitMate) - Automatic closing of quotes, parenthesis, brackets, etc. \*\*
+- [delimitMate](https://github.com/Raimondi/delimitMate) - Automatic closing of quotes, parenthesis, brackets, etc. 
 - [gundo](https://github.com/vim-scripts/Gundo/blob/master/doc/gundo.txt) - Graph Vim's undo tree so it is actually usable
 - [html-autoclose.vim](https://github.com/vim-scripts/HTML-AutoCloseTag) - Automatically closes HTML tags, doesn't play well with the delimitMate plugin
-- [indexed-search.vim](https://github.com/vim-scripts/IndexedSearch) - Adds visual cues when performing searches within a file \*\*
-- [lustyjuggler](https://github.com/vim-scripts/LustyJuggler) - Enables a window for navigating through open buffers
+- [indexed-search.vim](https://github.com/vim-scripts/IndexedSearch) - Adds visual cues when performing searches within a file 
 - [specky](https://github.com/vim-scripts/Specky/blob/master/doc/specky.txt) - Plug-in for testing Ruby code with RSpec
-- [tabular](https://github.com/godlygeek/tabular/blob/master/doc/Tabular.txt) - Configurable, flexible, intuitive text aligning \*\*
+- [tabular](https://github.com/godlygeek/tabular/blob/master/doc/Tabular.txt) - Configurable, flexible, intuitive text aligning 
 - [tailminusf](https://github.com/vim-scripts/TailMinusF/blob/master/doc/tailminusf.txt) - Watch the contents of a file in real time
 - [vim-ragtag](https://github.com/tpope/vim-ragtag/blob/master/doc/ragtag.txt) - Ghetto XML/HTML mappings
-- [vim-repeat](https://github.com/tpope/vim-repeat) - Enable repeating commands mapped to "." \*\*
 - [vim-speeddating](https://github.com/tpope/vim-speeddating/blob/master/doc/speeddating.txt) - Use CTRL-A/CTRL-X to increment dates, times, and more
-- [vim-surround](https://github.com/tpope/vim-surround/blob/master/doc/surround.txt) - Delete, change, and add "surroundings" i.e. parentheses, quotes, and HTML tags \*\*
 
-**\*\* - Recommended!**
 
 
 ## Snippets

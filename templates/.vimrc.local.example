@@ -3,11 +3,11 @@
 
 " User preferences
 " -----------------------------------------------------------------------------
-
+let mapleader = ','
 
 " User plugin configurations
 " -----------------------------------------------------------------------------
-" let g:yankring_history_dir=$HOME.'/.vim/tmp/yankring/'
+let g:yankring_history_dir=$HOME.'/.vim/tmp/yankring/'
 " let g:MarkdownPreviewUserStyles=$HOME.'/path/to/user/styles/'
 " let g:RefreshRunningBrowserDefault = 'chrome'
 " let g:snips_author = 'Your Name'
@@ -15,10 +15,36 @@
 
 " User key mapping
 " -----------------------------------------------------------------------------
-" <F1>-<F8> are reserved for .vimrc
+"
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+nnoremap ; :
+
+" Lazy escape calls:
+" inoremap jj <ESC>
+" inoremap jk <Esc>
+
 
 " User leader mapping
 " -----------------------------------------------------------------------------
+
+" Git Status toggle
+map <Leader>g :Gstatus<CR>
+
+" NerdTree Toggle
+map <leader>n :NERDTreeToggle<cr>
+
+" YankRing Setup
+nnoremap <leader>y :YRShow<cr>
+
+" ZoomWin configuration
+map <Leader><Leader> :ZoomWin<CR>
+
+map <silent> <Leader>b :LustyJuggler<CR>
+" nnoremap <silent> <F3> :TlistToggle<cr>
+" ino <silent> <F5> <c-r>=ShowAvailableSnips()<cr>
 
 
 " User file type utility settings
@@ -37,6 +63,9 @@
 " colorscheme cataracts
 " colorscheme snowblind
 
+set background=dark
+colorscheme solarized
+
 
 " User GUI specific settings (could be in .gvimrc.local)
 " -----------------------------------------------------------------------------
@@ -46,4 +75,3 @@
     " set transparency=5
   " end
 " endif
-
