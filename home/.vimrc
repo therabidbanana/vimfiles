@@ -38,7 +38,8 @@ set number
 set title
 set laststatus=2
 set splitbelow splitright
-set rnu
+setglobal relativenumber
+set relativenumber
 
 
 " Whitespace settings
@@ -88,10 +89,10 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " Plugin configurations
 " -----------------------------------------------------------------------------
 let NERDSpaceDelims=1
-let NERDTreeShowLineNumbers=0
 let NERDTreeMinimalUI=1
 let NERDTreeShowLineNumbers=0
 let NERDTreeIgnore=['.DS_Store', '\.rbc$', '\~$']
+let NERDTreeMouseMode=2
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes = ['scss']
@@ -317,7 +318,7 @@ endif
 
 syntax on
 set background=dark
-colorscheme colorblind
+colorscheme solarized
 
 
 " GUI specific settings (could be in .gvimrc)

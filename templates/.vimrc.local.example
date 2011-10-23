@@ -63,6 +63,7 @@ map <silent> <Leader>b :LustyJuggler<CR>
 " colorscheme cataracts
 " colorscheme snowblind
 
+let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized
 
