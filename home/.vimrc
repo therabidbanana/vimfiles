@@ -26,7 +26,7 @@ set ttyfast
 " Tab completion
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.un~,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,tmp/cache/*
 
 " No beeping
 set noerrorbells
@@ -154,6 +154,8 @@ endfunction
 nnoremap j gj
 nnoremap k gk
 
+nnoremap <D-/> :call NERDComment(0, "toggle")<cr>
+vnoremap <D-/> <ESC>:call NERDComment(1, "toggle")<cr>
 
 " Move between splits
 map <C-h> <C-w>h
@@ -166,7 +168,7 @@ nmap <tab> %
 vmap <tab> %
 
 " Insert/append a single character
-nmap ,, i_<esc>r
+nmap :: i_<esc>r
 nmap ;; a_<esc>r
 
 " Clear the search highlight
