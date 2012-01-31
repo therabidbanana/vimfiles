@@ -49,9 +49,15 @@
 [submodule "home/.vim/bundle_storage/json.vim"]
 	path = home/.vim/bundle_storage/json.vim
 	url = https://github.com/vim-scripts/JSON.vim.git
+[submodule "home/.vim/bundle_storage/threesome"]
+	path = home/.vim/bundle_storage/threesome
+	url = https://github.com/sjl/threesome.vim.git
+[submodule "home/.vim/bundle_storage/vim-slim"]
+	path = home/.vim/bundle_storage/vim-slim
+	url = https://github.com/bbommarito/vim-slim.git
 [submodule "home/.vim/bundle_storage/lustyjuggler"]
 	path = home/.vim/bundle_storage/lustyjuggler
-	url = https://github.com/vim-scripts/LustyJuggler.git
+	url = https://github.com/therabidbanana/LustyJuggler.git
 [submodule "home/.vim/bundle_storage/markdown-preview.vim"]
 	path = home/.vim/bundle_storage/markdown-preview.vim
 	url = https://github.com/mkitt/markdown-preview.vim.git
