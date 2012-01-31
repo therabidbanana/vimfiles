@@ -1,6 +1,12 @@
 
 " Disable vi compatibility
 set nocompatible
+map w <Plug>CamelCaseMotion_w
+map b <Plug>CamelCaseMotion_b
+map e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
 
 " Use Pathogen to load bundles
 call pathogen#runtime_append_all_bundles()
@@ -156,6 +162,7 @@ nnoremap k gk
 
 nnoremap <D-/> :call NERDComment(0, "toggle")<cr>
 vnoremap <D-/> <ESC>:call NERDComment(1, "toggle")<cr>
+nnoremap <F5> :GundoToggle<CR>
 
 " Move between splits
 map <C-h> <C-w>h
@@ -168,8 +175,8 @@ nmap <tab> %
 vmap <tab> %
 
 " Insert/append a single character
-nmap :: i_<esc>r
-nmap ;; a_<esc>r
+" nmap :: i_<esc>r
+" nmap ;; a_<esc>r
 
 " Clear the search highlight
 map <silent> \ :silent nohlsearch<cr>
@@ -193,8 +200,8 @@ map <leader>a :Ack
 nmap <silent> <leader>wt :set wrap!<cr>
 
 " Edit .vimrc and .vimrc.local
-nmap <leader>evm <C-w><C-v><C-l>:e $MYVIMRC<cr>
-nmap <leader>evl <C-w><C-v><C-l>:e ~/.vimrc.local<cr>
+" nmap <leader>erc <C-w><C-v><C-l>:e $MYVIMRC<cr>
+" nmap <leader>erc <C-w><C-v><C-l>:e ~/.vimrc.local<cr>
 
 " Collapse all multi-line occurrences of whitespace into one line
 map <leader>CN :%s/^\n\+/\r//<cr>:let @/=''<cr>
@@ -248,7 +255,7 @@ endfunction
 function! s:setMarkdown()
   call s:setWrapping()
   call s:setBrowserEnv()
-  au! BufWritePost *.md,*.markdown,*.mkd :MDP
+  " au! BufWritePost *.md,*.markdown,*.mkd :MDP
 endfunction
 
 " Commands for vim-rails
@@ -302,7 +309,7 @@ if !exists("autocommands_loaded")
   au! BufWritePost *.snippets call ReloadAllSnippets()
 
   " Enable autosave
-  au FocusLost * :wa
+  au FocusLost *  silent! wa
 
   " Enable omnicomplete for supported filetypes
   autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
