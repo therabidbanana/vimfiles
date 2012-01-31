@@ -8,6 +8,8 @@ default_bundles=(
   gist-vim
   jade.vim
   json.vim
+  vim-slim
+  camelcasemotion
   markdown-preview.vim
   nerdcommenter
   nerdtree
