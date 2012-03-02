@@ -34,9 +34,11 @@ default_bundles=(
   vim-repeat
   lustyjuggler
   yankring
-  Command-T
+  ctrlp.vim
   ZoomWin
   bufkill.vim
+  tslime.vim
+  vim-turbux
 )
 
 full_path=`pwd`
