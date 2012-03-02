@@ -14,6 +14,7 @@ call pathogen#helptags()
 
 filetype on
 filetype plugin indent on
+set t_Co=256
 
 " Preferences
 " -----------------------------------------------------------------------------
@@ -164,12 +165,6 @@ nnoremap <D-/> :call NERDComment(0, "toggle")<cr>
 vnoremap <D-/> <ESC>:call NERDComment(1, "toggle")<cr>
 nnoremap <F5> :GundoToggle<CR>
 
-" Move between splits
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Block movement
 nmap <tab> %
 vmap <tab> %
@@ -285,6 +280,7 @@ endfunction
 
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
+  autocmd BufEnter * set relativenumber
 
   " Reload .vimrc after it or vimrc.local been saved
   au! BufWritePost .vimrc source %
@@ -315,6 +311,7 @@ if !exists("autocommands_loaded")
   autocmd FileType * if exists("+completefunc") && &completefunc == "" | setlocal completefunc=syntaxcomplete#Complete | endif
   autocmd FileType * if exists("+omnifunc") && &omnifunc == "" | setlocal omnifunc=syntaxcomplete#Complete | endif
 
+  autocmd BufWritePre * :%s/\s\+$//e
 endif
 
 

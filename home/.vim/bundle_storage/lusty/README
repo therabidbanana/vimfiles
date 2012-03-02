@@ -1,0 +1,2 @@
+This is a hacked version of lusty enabling opening splits (buffer letter/number + "v" or "b") 
+and closing buffer (buffer letter/number + 'w') easily with a second keypress.
