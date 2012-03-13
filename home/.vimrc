@@ -1,4 +1,3 @@
-
 " Disable vi compatibility
 set nocompatible
 map w <Plug>CamelCaseMotion_w
@@ -33,7 +32,7 @@ set ttyfast
 " Tab completion
 set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.un~,*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,tmp/cache/*
+set wildignore+=*.un~,*.o,*.obj,.git,*.rbc,*.class,.svn,*/vendor/gems/*,*/tmp/cache/*
 
 " No beeping
 set noerrorbells
