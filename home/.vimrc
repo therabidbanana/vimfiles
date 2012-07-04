@@ -44,8 +44,6 @@ set number
 set title
 set laststatus=2
 set splitbelow splitright
-setglobal relativenumber
-set relativenumber
 
 
 " Whitespace settings
@@ -279,7 +277,6 @@ endfunction
 
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
-  autocmd BufEnter * set relativenumber
 
   " Reload .vimrc after it or vimrc.local been saved
   au! BufWritePost .vimrc source %
@@ -317,13 +314,12 @@ endif
 
 " Themes and GUI settings
 " -----------------------------------------------------------------------------
-if $TERM == 'xterm-color' && &t_Co == 8
-  set t_Co=16
-endif
+set t_Co=256
 
 syntax on
 set background=dark
 colorscheme solarized
+let g:easytags_auto_highlight = 0
 
 
 " GUI specific settings (could be in .gvimrc)
