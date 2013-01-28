@@ -54,7 +54,7 @@
 	url = https://github.com/sjl/threesome.vim.git
 [submodule "home/.vim/bundle_storage/vim-slim"]
 	path = home/.vim/bundle_storage/vim-slim
-	url = https://github.com/bbommarito/vim-slim.git
+	url = https://github.com/slim-template/vim-slim.git
 [submodule "home/.vim/bundle_storage/lustyjuggler"]
 	path = home/.vim/bundle_storage/lustyjuggler
 	url = https://github.com/therabidbanana/LustyJuggler.git
