@@ -4,41 +4,50 @@ default_bundles=(
   actionscript.vim
   applescript.vim
   browser-refresh.vim
+  bufkill.vim
+  camelcasemotion
   cocoa.vim
+  ctrlp.vim
   gist-vim
+  gundo
   jade.vim
   json.vim
-  vim-slim
-  camelcasemotion
+  lusty
+  lustyjuggler
   markdown-preview.vim
   nerdcommenter
   nerdtree
   processing.vim
-  vim-rvm
   snipmate.vim
   statusline
   supertab
   syntastic
   taglist.vim
+  tslime.vim
+  vim-bufonly
   vim-coffee-script
   vim-cucumber
+  vim-easytags
   vim-fugitive
   vim-haml
+  vim-handlebars
   vim-javascript
   vim-markdown
+  vim-powerline
   vim-rails
-  vim-ruby
-  vim-stylus
-  vim-unimpaired
-  vim-surround
   vim-repeat
-  lustyjuggler
-  yankring
-  ctrlp.vim
-  ZoomWin
-  bufkill.vim
-  tslime.vim
+  vim-ruby
+  vim-rvm
+  vim-slim
+  vim-stylus
+  vim-surround
   vim-turbux
+  vim-unimpaired
+  vim-yankring
+  vimux
+  vitality.vim
+  yankring
+  ZoomWin
 )
 
 full_path=`pwd`

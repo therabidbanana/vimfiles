@@ -124,15 +124,21 @@
 [submodule "home/.vim/bundle_storage/vim-unimpaired"]
 	path = home/.vim/bundle_storage/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "home/.vim/bundle_storage/yankring"]
-	path = home/.vim/bundle_storage/yankring
-	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "home/.vim/bundle_storage/YankRing.vim"]
+	path = home/.vim/bundle_storage/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "home/.vim/bundle_storage/vim-rvm"]
 	path = home/.vim/bundle_storage/vim-rvm
 	url = https://github.com/tpope/vim-rvm.git
 [submodule "home/.vim/bundle_storage/delimitMate"]
 	path = home/.vim/bundle_storage/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+[submodule "home/.vim/bundle_storage/vimux"]
+	path = home/.vim/bundle_storage/vimux
+	url = https://github.com/benmills/vimux.git
+[submodule "home/.vim/bundle_storage/vitality.vim"]
+	path = home/.vim/bundle_storage/vitality.vim
+	url = https://github.com/sjl/vitality.vim.git
 [submodule "home/.vim/bundle_storage/supertab"]
 	path = home/.vim/bundle_storage/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -142,9 +148,18 @@
 [submodule "home/.vim/bundle_storage/vim-stylus"]
 	path = home/.vim/bundle_storage/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule "home/.vim/bundle_storage/vim-easytags"]
+	path = home/.vim/bundle_storage/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
 [submodule "home/.vim/bundle_storage/vim-coffee-script"]
 	path = home/.vim/bundle_storage/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "home/.vim/bundle_storage/vim-handlebars"]
+	path = home/.vim/bundle_storage/vim-handlebars
+	url = https://github.com/nono/vim-handlebars.git
+[submodule "home/.vim/bundle_storage/vim-powerline"]
+	path = home/.vim/bundle_storage/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "home/.vim/bundle_storage/ZoomWin"]
 	path = home/.vim/bundle_storage/ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
