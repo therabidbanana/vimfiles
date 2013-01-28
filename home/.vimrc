@@ -8,8 +8,7 @@ sunmap b
 sunmap e
 
 " Use Pathogen to load bundles
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+call pathogen#infect()
 
 filetype on
 filetype plugin indent on
@@ -287,6 +286,7 @@ if !exists("autocommands_loaded")
   au BufRead,BufNewFile *.m*down set filetype=markdown
   au BufRead,BufNewFile *.as set filetype=actionscript
   au BufRead,BufNewFile *.json set filetype=json
+  au BufRead,BufNewFile *.hamstache set filetype=haml
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
   au FileType make                                     set noexpandtab
 
