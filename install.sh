@@ -43,10 +43,9 @@ default_bundles=(
   vim-surround
   vim-turbux
   vim-unimpaired
-  vim-yankring
   vimux
   vitality.vim
-  yankring
+  YankRing.vim
   ZoomWin
 )
 
