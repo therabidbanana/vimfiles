@@ -136,6 +136,9 @@
 [submodule "home/.vim/bundle_storage/vimux"]
 	path = home/.vim/bundle_storage/vimux
 	url = https://github.com/benmills/vimux.git
+[submodule "home/.vim/bundle_storage/threesome.vim"]
+	path = home/.vim/bundle_storage/threesome.vim
+	url = https://github.com/sjl/threesome.vim.git
 [submodule "home/.vim/bundle_storage/vitality.vim"]
 	path = home/.vim/bundle_storage/vitality.vim
 	url = https://github.com/sjl/vitality.vim.git

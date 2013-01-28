@@ -23,6 +23,7 @@ default_bundles=(
   supertab
   syntastic
   taglist.vim
+  threesome.vim
   tslime.vim
   vim-bufonly
   vim-coffee-script
